@@ -1,3 +1,4 @@
+/*1. Описати всю сім'ю сімпсонів (5 персонажів)*/
 let TheSimpsons = [
     {name: 'Homer', surname: 'Simpson', age: 36},
     {name: 'Bart', surname: 'Simpson', age: 12},
