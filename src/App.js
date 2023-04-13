@@ -1,24 +1,30 @@
 import logo from './logo.svg';
+import Posts from "./Components/Posts/Posts";
+import {useState} from "react";
+import FullPostInfo from "./Components/FullPostInfo/FullPostInfo";
 import './App.css';
 
+
+
 function App() {
+
+    let[chosenPost, GetChosenPost] = useState({});
+
+    let lift = (obj) =>{
+        GetChosenPost({...obj});
+    }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <div>
+         <div>
+             <Posts lift={lift}/>
+         </div>
+         <div className='FullPostInfo'>
+             <FullPostInfo value={chosenPost}/>
+         </div>
+     </div>
+
   );
 }
 
