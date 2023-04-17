@@ -1,13 +1,29 @@
 import React from 'react';
 import Posts from "../Posts/Posts";
 
-const Post = ({value, lift}) => {
+const Post = ({post, GetPost}) => {
+    const {id, title} = post;
 
-    return (
+
+    return(
+        <div>
+            <div>id - {id}</div>
+            <div>title - {title}</div>
+            <button onClick= {()=>GetPost(post)}>Post info</button>
+        </div>
+    )
+
+
+
+
+
+    /*const {id, name} = value;*/
+
+    /*return (
         <div>
             <div>
-                <div>Id - {value.id}</div>
-                <div>Title - {value.name}</div>
+                <div>Id - {id}</div>
+                <div>Title - {name}</div>
                 <button onClick={()=> {
                    lift(value)
                 }
@@ -15,7 +31,7 @@ const Post = ({value, lift}) => {
             </div>
 
         </div>
-    );
+    );*/
 };
 
 export default Post;
